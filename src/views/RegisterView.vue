@@ -32,7 +32,7 @@ const onSubmit = handleSubmit((dataLogin) => {
   AuthService.register(dataLogin.email, dataLogin.password).then(
     async (result) => {
       if (result instanceof Error) {
-        return toast.error('E-mail já registrado')
+        return toast.error('User already registered')
       } else {
         await router.push('/login')
       }

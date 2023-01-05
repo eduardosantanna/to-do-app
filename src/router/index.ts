@@ -15,11 +15,11 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView,
-        beforeEnter: (to, from, next) => {
-          const auth = useAuthStore()
-            if (auth.isAuthenticated()) next()
+      beforeEnter: (to, from, next) => {
+        const auth = useAuthStore()
+        if (auth.isAuthenticated()) next()
         else next({ name: 'login' })
-        },
+      },
     },
     {
       path: '/login',

@@ -45,7 +45,7 @@ const getTasks = () => {
 const addTask = () => {
   TaskService.createTask(inputData.value).then((result) => {
     if (result instanceof Error) return toast(result.message)
-    toast.success('Tarefa adicionada!')
+    toast.success('Task added!')
     inputData.value = ''
     getTasks()
   })
@@ -59,7 +59,7 @@ const updateTask = () => {
     currentTask.value.id
   ).then((result) => {
     if (result instanceof Error) return toast.error(result.message)
-    toast.success('Tarefa atualizada')
+    toast.success('Updated task!')
   })
 }
 
@@ -67,7 +67,7 @@ const deleteTask = (id: number) => {
   TaskService.deleteTasks(id).then((result) => {
     if (result instanceof Error) return toast.error(result.message)
 
-    toast.warning('Tarefa deletada')
+    toast.warning('Task deleted')
     tasks.value = tasks.value.filter((task) => task.id !== id)
   })
 }
@@ -90,25 +90,36 @@ const deleteTask = (id: number) => {
       :on-change-input-add-task="(value) => setValueInput(value)"
       :click-on-buttom-add-task="addTask" />
     <div class="taks-container">
-      <div class="divider"></div>
+      <div v-if="isLoading" class="loading-icon">
+        <img src="@/shared/assets/icons/clipboard-list-svgrepo-com.svg" />
+      </div>
+
+      <div v-if="!isLoading" class="divider"></div>
       <ul v-if="tasks.length !== 0">
         <li
           v-for="(task, index) in tasks"
           :key="task.id"
           :style="{ textDecoration: task.completed ? 'line-through' : 'none' }">
           {{ index + 1 }}. {{ task.content }}
-          <div @click="deleteTask(task.id)">
-            <img src="@/shared/assets/icons/delete.png" />
-          </div>
-          <div
-            @click="
-              (e) => (
-                (isOpen = !isOpen),
-                (currentTask = task),
-                (indexCurrentTask = index)
-              )
-            ">
-            <img src="@/shared/assets/icons/edit.png" />
+          <div class="containre-icons-list">
+            <div>
+              <img
+                @click="deleteTask(task.id)"
+                class="icon-list"
+                src="@/shared/assets/icons/delete.png" />
+            </div>
+            <div>
+              <img
+                @click="
+                  (e) => (
+                    (isOpen = !isOpen),
+                    (currentTask = task),
+                    (indexCurrentTask = index)
+                  )
+                "
+                class="icon-list"
+                src="@/shared/assets/icons/edit.png" />
+            </div>
           </div>
         </li>
       </ul>
@@ -139,12 +150,12 @@ const deleteTask = (id: number) => {
   @apply border-b relative border-sky-500 pl-16 pt-1 pr-1 truncate hover:border-x-cyan-600 hover:cursor-pointer;
 }
 
-.taks-container ul li div {
-  @apply w-4 absolute top-2 right-2;
+.containre-icons-list {
+  @apply flex gap-3 bg-white absolute top-2 right-1 flex-row-reverse;
 }
 
-.taks-container ul li div:nth-child(2) {
-  @apply w-4 absolute top-2 right-8;
+.icon-list {
+  @apply w-4 h-4;
 }
 
 .noTaskFound {
@@ -157,5 +168,13 @@ const deleteTask = (id: number) => {
 
 .skeleton-loading {
   @apply bg-slate-200 animate-pulse;
+}
+
+.loading-icon {
+  @apply w-full animate-bounce flex justify-center items-center;
+}
+
+.loading-icon img {
+  @apply w-32 animate-bounce flex justify-center items-center;
 }
 </style>

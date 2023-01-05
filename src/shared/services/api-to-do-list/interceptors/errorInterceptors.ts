@@ -9,8 +9,7 @@ export const errorInterceptors = async (error: AxiosError) => {
 
   if (error.response?.status === 401) {
     await authStore.logout()
-    toast.error('Sessão expirada! Realize um novo login')
-    return Promise.reject(new Error('Sessão expirada! Realize um novo login'))
+    return Promise.reject(new Error('Session expired! Make a new login'))
   }
 
   return Promise.reject(error)

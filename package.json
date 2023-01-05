@@ -1,5 +1,10 @@
 {
   "name": "package.json",
+  "author": {
+    "name": "Eduardo Santana",
+    "email": "eduardosantana.total@gmail.com",
+    "url": "https://github.com/eduardosantanna?tab=repositories"
+  },
   "version": "0.0.0",
   "private": true,
   "scripts": {

@@ -15,7 +15,7 @@ const logout = async () => {
         <li class="logo">
           <img src="@/shared/assets/icons/clipboard-list-svgrepo-com.svg" />
         </li>
-        <li @click="logout" class="exit-option">Sair</li>
+        <li @click="logout" class="exit-option">Sign out</li>
       </ul>
     </nav>
   </header>
@@ -30,7 +30,7 @@ const logout = async () => {
   @apply flex justify-between;
 }
 .logo {
-  @apply w-10 animate-bounce;
+  @apply w-10;
 }
 .exit-option {
   @apply text-white font-medium text-lg 

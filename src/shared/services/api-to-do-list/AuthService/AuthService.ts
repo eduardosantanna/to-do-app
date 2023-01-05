@@ -9,10 +9,11 @@ export default new (class AuthService {
         return data.token
       }
 
-      return new Error('Error durante o login')
+      return new Error('An error occurred during login')
     } catch (error) {
       return new Error(
-        (error as { message: string }).message || 'Error durante o login'
+        (error as { message: string }).message ||
+          'An error occurred during login'
       )
     }
   }
@@ -22,7 +23,8 @@ export default new (class AuthService {
       await Api.get('/logout')
     } catch (error) {
       return new Error(
-        (error as { message: string }).message || 'Error ao realizar o logout'
+        (error as { message: string }).message ||
+          'An error occurred while logging out'
       )
     }
   }
@@ -34,11 +36,11 @@ export default new (class AuthService {
     try {
       const { data } = await Api.post('/users', { email, password })
       if (data) return data
-      return new Error('Ocorreu um erro durante o registro')
+      return new Error('An error occurred while registering')
     } catch (error) {
       return new Error(
         (error as { message: string }).message ||
-          'Ocorreu um erro durante o registro'
+          'An error occurred while registering'
       )
     }
   }

@@ -16,9 +16,9 @@ export default new (class TaskService {
 
       if (data) return data
 
-      return new Error('Error ao solicitar as tarefas')
+      return new Error('Error when requesting tasks')
     } catch (error) {
-      return new Error('Error ao solicitar as tarefas')
+      return new Error('Error when requesting tasks')
     }
   }
 
@@ -28,10 +28,10 @@ export default new (class TaskService {
 
       if (data) return data
 
-      return new Error('Error ao criar tarefa')
+      return new Error('Error creating task')
     } catch (error) {
       return new Error(
-        (error as { message: string }).message || 'Error ao criar tarefa'
+        (error as { message: string }).message || 'Error creating task'
       )
     }
   }
@@ -41,7 +41,7 @@ export default new (class TaskService {
       await Api.put(`/tasks/${id}`, { content, completed })
     } catch (error) {
       return new Error(
-        (error as { message: string }).message || 'Error ao atualizar tarefa'
+        (error as { message: string }).message || 'Error when updating task'
       )
     }
   }
@@ -51,7 +51,7 @@ export default new (class TaskService {
       await Api.delete(`/tasks/${id}`)
     } catch (error) {
       return new Error(
-        (error as { message: string }).message || 'Error ao deletar a tarefa'
+        (error as { message: string }).message || 'Error deleting task'
       )
     }
   }

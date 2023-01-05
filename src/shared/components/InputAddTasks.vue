@@ -24,7 +24,7 @@ const props = defineProps<IInputAddTasksData>()
 
 <style scoped>
 .container-add-task {
-  @apply flex my-8 gap-2;
+  @apply flex my-8 gap-2 relative;
 }
 
 .input-add-task {
@@ -35,16 +35,11 @@ const props = defineProps<IInputAddTasksData>()
 }
 
 .btn-add-task {
-  @apply bg-blue-500 w-12 h-11 
-    text-white rounded-full cursor-pointer 
-    hover:bg-blue-400 shadow-2xl font-bold 
-    relative;
+  @apply absolute bg-blue-500 text-white hover:bg-blue-400
+  w-11 h-11 rounded right-0 text-2xl flex justify-center;
 }
 
 .btn-add-task-content {
-  position: absolute;
-  top: 0%;
-  left: 28%;
-  font-size: 26px;
+  @apply mt-1;
 }
 </style>

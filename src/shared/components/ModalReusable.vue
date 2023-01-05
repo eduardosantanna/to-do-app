@@ -16,7 +16,7 @@ const props = defineProps<IModalReusablePropsData>()
 <template>
   <div v-if="open" @click.self="clickOnClose" class="container-modal">
     <div class="container-modal-content">
-      <h1 class="title-modal">Tarefa {{ (indexTask || 0) + 1 }}</h1>
+      <h1 class="title-modal">Task {{ (indexTask || 0) + 1 }}</h1>
       <hr class="divider" />
       <textarea
         @input="(e) => onChangeTextArea((e.target as HTMLInputElement).value)"
@@ -28,7 +28,7 @@ const props = defineProps<IModalReusablePropsData>()
             @click="clickOnCheckbox"
             :checked="currentTask?.completed"
             type="checkbox" />
-          <p>Tarefa completa?</p>
+          <p>Task completed?</p>
         </div>
         <div>
           <button @click.self="clickOnSave" class="btn-save">Save</button>
