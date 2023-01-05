@@ -95,7 +95,7 @@ const deleteTask = (id: number) => {
       </div>
 
       <div v-if="!isLoading" class="divider"></div>
-      <ul v-if="tasks.length !== 0">
+      <ul v-if="tasks.length !== 0 && !isLoading">
         <li
           v-for="(task, index) in tasks"
           :key="task.id"
