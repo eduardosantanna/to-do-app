@@ -49,19 +49,19 @@ const onSubmit = handleSubmit((dataLogin) => {
       <div class="input-form-container">
         <label class="label-input-form">E-mail</label>
         <Field name="email" class="input-form" type="email" />
-        <ErrorMessage name="email" />
+        <ErrorMessage class="error-message" name="email" />
       </div>
 
       <div class="input-form-container">
         <label class="label-input-form">Password</label>
         <Field name="password" class="input-form" type="password" />
-        <ErrorMessage name="password" />
+        <ErrorMessage class="error-message" name="password" />
       </div>
 
       <div class="input-form-container">
         <label class="label-input-form">Confirm password</label>
         <Field name="confirmPassword" class="input-form" type="password" />
-        <ErrorMessage name="confirmPassword" />
+        <ErrorMessage class="error-message" name="confirmPassword" />
       </div>
 
       <div class="button-form-container">
@@ -120,5 +120,9 @@ const onSubmit = handleSubmit((dataLogin) => {
 
 .button-form-container p span {
   @apply font-medium text-blue-800 cursor-pointer;
+}
+
+.error-message {
+  @apply text-red-600;
 }
 </style>
