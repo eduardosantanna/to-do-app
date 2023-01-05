@@ -1,46 +1,28 @@
-# .
+<h1 align="center">ToDo List</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+# Descrição
 
-## Recommended IDE Setup
+Esse projeto foi desenvolvido visando exercitar o aprendizado e a fixação de conhecimentos em algumas tecnologias que eu nunca utilizei.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# Screenshots
 
-## Type Support for `.vue` Imports in TS
+<img src="/screenshots/screencapture-desktop.png" alt="MarineGEO circle logo" style="height: 200px; width:333px;"/> <img src="/screenshots/screencapture-login-desktop.png" alt="MarineGEO circle logo" style="height: 200px; width:333px;"/> <img src="/screenshots/screencapture-register-desktop.png" alt="MarineGEO circle logo" style="height: 200px; width:333px;"/>
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+<img src="/screenshots/screencapture-mobile.png" alt="MarineGEO circle logo" style="height: 500px; width:250px;"/> <img src="/screenshots/screencapture-login-mobile.png" alt="MarineGEO circle logo" style="height: 500px; width:250px;"/> <img src="/screenshots/screencapture-register-mobile.png" alt="MarineGEO circle logo" style="height: 500px; width:250px;"/>
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+[Clique aqui para acessar o projeto](https://to-do-app-front.onrender.com)
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+# Funcionalidades
 
-## Customize configuration
+- Realiza a criação, edição e exclusão de tarefa através do consumo de uma API
+- Login e registro de usuários
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+# Tecnologias utilizadas
 
-## Project Setup
+- [Vue.js](https://vuejs.org)
+- [Pinia](https://pinia.vuejs.org)
+- [Tailwindcss](https://tailwindcss.com)
+- [Axios](https://axios-http.com)
+- [API](https://github.com/eduardosantanna/to-do-backend)
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
