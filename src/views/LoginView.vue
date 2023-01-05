@@ -14,8 +14,12 @@ const toast = useToast()
 const router = useRouter()
 
 const loginSchemaValidation = object().shape({
-  email: string().required().email(),
-  password: string().required().min(8),
+  email: string()
+    .required('E-mail is a required field')
+    .email('E-mail must be a valid E-mail'),
+  password: string()
+    .required('Password is a required field')
+    .min(8, 'Password must be at least 8 characters'),
 })
 
 const { handleSubmit } = useForm<IDataLogin>({
